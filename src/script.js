@@ -118,6 +118,12 @@ gltfloader.load("/models/AR Ball.gltf", gltf => {
         folder.add(ballMaterial, "wireframe").name("Wireframe");
         folder.add(ballMaterial, "metalness").min(0).max(1).step(0.001).name("Metalness");
         folder.add(ballMaterial, "roughness").min(0).max(1).step(0.001).name("Roughness");
+        folder
+            .add(ballMaterial, "emissiveIntensity")
+            .min(0)
+            .max(1)
+            .step(0.001)
+            .name("Emission Intensity");
 
         const folder2 = gui.addFolder("Fresnel");
         folder2.add(material.uniforms.uFolloff, "value").min(0).max(5).step(0.001).name("Falloff");
