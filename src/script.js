@@ -1,6 +1,5 @@
 import "./style.css";
 import * as THREE from "three";
-// import { Clock, Material, PointLight } from 'three'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { GUI } from "lil-gui";
@@ -62,10 +61,16 @@ const textureLoader = new THREE.TextureLoader();
 
 const baseColorTexture = textureLoader.load("/textures/Ball_BaseColor.png");
 baseColorTexture.flipY = false;
+baseColorTexture.colorSpace = THREE.SRGBColorSpace;
+baseColorTexture.needsUpdate = true;
 const emissionTexture = textureLoader.load("/textures/Ball_Emission.png");
 emissionTexture.flipY = false;
+emissionTexture.colorSpace = THREE.SRGBColorSpace;
+emissionTexture.needsUpdate = true;
 const normalTexture = textureLoader.load("/textures/Ball_Normal.png");
+normalTexture.colorSpace = THREE.SRGBColorSpace;
 normalTexture.flipY = false;
+normalTexture.needsUpdate = true;
 
 let ballMaterial = null;
 
