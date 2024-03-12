@@ -100,7 +100,9 @@ const gltfloader = new GLTFLoader();
 gltfloader.load("/models/AR Ball.gltf", gltf => {
     const ball = gltf.scene.children[0];
     ballMaterial = ball.material;
-
+    // ball.material.emissiveMap = emissionTexture;
+    // ball.material.emissive = 0xFF7C33;
+    ballMaterial.emissiveIntensity = 0; 
     // Fresnel sphere
     const sphereGeometry = ball.geometry.clone();
     sphereGeometry.scale(1.05, 1.05, 1.05);
